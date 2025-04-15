@@ -1,4 +1,4 @@
-package lt.kauneta.edemocracy.auth.security;
+package lt.kauneta.edemocracy.shared.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
