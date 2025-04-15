@@ -1,4 +1,4 @@
-package lt.kauneta.edemocracy.auth.security;
+package lt.kauneta.edemocracy.shared.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

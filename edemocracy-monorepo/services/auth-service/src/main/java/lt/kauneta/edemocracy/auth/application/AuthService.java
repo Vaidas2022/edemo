@@ -1,13 +1,15 @@
 package lt.kauneta.edemocracy.auth.application;
 
-import lt.kauneta.edemocracy.auth.domain.User;
-import lt.kauneta.edemocracy.auth.dto.LoginRequest;
-import lt.kauneta.edemocracy.auth.security.JwtProvider;
-import lt.kauneta.edemocracy.auth.domain.UserRepository;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
+import lt.kauneta.edemocracy.auth.domain.User;
+import lt.kauneta.edemocracy.auth.domain.UserRepository;
+import lt.kauneta.edemocracy.auth.dto.LoginRequest;
+import lt.kauneta.edemocracy.auth.dto.RegisterRequest;
+import lt.kauneta.edemocracy.shared.security.JwtProvider;
+
 
 @Service
 public class AuthService {
@@ -22,6 +24,20 @@ public class AuthService {
         this.jwtProvider = jwtProvider;
     }
 
+    public void register(RegisterRequest request) {
+        if (userRepository.findByLoginName(request.loginName()).isPresent()) {
+            throw new RuntimeException("Login name already in use");
+        }
+
+        User user = new User(
+                request.loginName(),
+                passwordEncoder.encode(request.password()),
+                request.role()
+        );
+
+        userRepository.save(user);
+    }
+    
     public String authenticate(LoginRequest request) {
         User user = userRepository.findByLoginName(request.loginName())
                 .orElseThrow(() -> new RuntimeException("User not found"));

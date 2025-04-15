@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>lt.kauneta.edemocracy</groupId>
+	<artifactId>edemocracy-monorepo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>edemocracy-monorepo</name>
+
+	<!--Modules-->
+	<modules>
+		<module>services/auth-service</module>
+		<module>services/issue-service</module>
+		<module>shared-lib</module>
+	</modules>
+	
+	 <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.5</version>
+        <relativePath/> <!-- lookup iš Maven Central -->
+    </parent>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>lt.kauneta.edemocracy</groupId>
+				<artifactId>shared-lib</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<!-- Spring Boot Starter Parent rekomenduojama -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-parent</artifactId>
+				<version>3.2.5</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- JJWT priklausomybės -->
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt-api</artifactId>
+				<version>0.12.6</version>
+			</dependency>
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt-impl</artifactId>
+				<version>0.12.6</version>
+			</dependency>
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt-jackson</artifactId>
+				<version>0.12.6</version>
+			</dependency>
+
+			<!-- OpenAPI (Springdoc) -->
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+				<version>2.1.0</version>
+			</dependency>
+
+			<!-- Papildomai aiškumo dėlei -->
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-test</artifactId>
+				<version>6.2.4</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>
