@@ -4,6 +4,7 @@ import lt.kauneta.edemocracy.issue.application.IssueService;
 import lt.kauneta.edemocracy.issue.dto.CreateIssueRequest;
 import lt.kauneta.edemocracy.issue.dto.IssueDto;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,4 +30,12 @@ public class IssueController {
     public ResponseEntity<List<IssueDto>> getByEldership(@PathVariable UUID eldershipId) {
         return ResponseEntity.ok(issueService.findByEldership(eldershipId));
     }
+    
+    @PostMapping("/{issueId}/relevant")
+    public ResponseEntity<Void> markRelevant(@PathVariable UUID issueId) {
+        UUID userId = (UUID) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        issueService.markAsRelevant(userId, issueId);
+        return ResponseEntity.ok().build();
+    }
+
 }
