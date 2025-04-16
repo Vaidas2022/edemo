@@ -1,8 +1,8 @@
-package lt.kauneta.edemocracy.issue.presentation;
+package lt.kauneta.edemocracy.issue.controllers;
 
-import lt.kauneta.edemocracy.issue.application.IssueService;
-import lt.kauneta.edemocracy.issue.dto.CreateIssueRequest;
 import lt.kauneta.edemocracy.issue.dto.IssueDto;
+import lt.kauneta.edemocracy.issue.services.IssueService;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +21,7 @@ public class IssueController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> create(@RequestBody CreateIssueRequest request) {
+    public ResponseEntity<Void> create(@RequestBody lt.kauneta.edemocracy.issue.dto.CreateIssueRequest request) {
         issueService.create(request);
         return ResponseEntity.status(201).build();
     }

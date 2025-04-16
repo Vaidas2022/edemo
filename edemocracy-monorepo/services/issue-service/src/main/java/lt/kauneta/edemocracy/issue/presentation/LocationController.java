@@ -1,7 +1,8 @@
 package lt.kauneta.edemocracy.issue.presentation;
 
-import lt.kauneta.edemocracy.issue.application.LocationService;
 import lt.kauneta.edemocracy.issue.dto.EldershipDto;
+import lt.kauneta.edemocracy.issue.services.LocationService;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class LocationController {
 
     @GetMapping("/elderships")
     public List<EldershipDto> getAll() {
-        return service.getAll();
+        return service.getAllElderships();
     }
 
     @GetMapping("/elderships/by-municipality/{code}")

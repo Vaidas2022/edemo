@@ -1,11 +1,12 @@
-package lt.kauneta.edemocracy.issue.application;
+package lt.kauneta.edemocracy.issue.services;
 
-import lt.kauneta.edemocracy.issue.domain.Issue;
-import lt.kauneta.edemocracy.issue.domain.IssueRelevance;
-import lt.kauneta.edemocracy.issue.domain.IssueRelevanceRepository;
-import lt.kauneta.edemocracy.issue.domain.IssueRepository;
 import lt.kauneta.edemocracy.issue.dto.CreateIssueRequest;
 import lt.kauneta.edemocracy.issue.dto.IssueDto;
+import lt.kauneta.edemocracy.issue.models.Issue;
+import lt.kauneta.edemocracy.issue.models.IssueRelevance;
+import lt.kauneta.edemocracy.issue.repository.IssueRelevanceRepository;
+import lt.kauneta.edemocracy.issue.repository.IssueRepository;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;

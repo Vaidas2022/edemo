@@ -1,4 +1,4 @@
-package lt.kauneta.edemocracy.issue.domain;
+package lt.kauneta.edemocracy.issue.models;
 
 import jakarta.persistence.*;
 import java.util.UUID;
