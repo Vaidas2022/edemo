@@ -9,7 +9,6 @@
         <groupId>lt.kauneta.edemocracy</groupId>
         <artifactId>edemocracy-monorepo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <artifactId>auth-service</artifactId>
@@ -24,7 +23,6 @@
         <dependency>
             <groupId>lt.kauneta.edemocracy</groupId>
             <artifactId>shared-lib</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -81,6 +79,16 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+        	<groupId>lt.kauneta.edemocracy</groupId>
+        	<artifactId>issue-service</artifactId>
+        	<version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+        	<groupId>lt.kauneta</groupId>
+        	<artifactId>eDemokratija</artifactId>
+        	<version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

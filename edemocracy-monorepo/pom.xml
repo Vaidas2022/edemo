@@ -12,15 +12,16 @@
 	<modules>
 		<module>services/auth-service</module>
 		<module>services/issue-service</module>
+		<module>services/petitions-service</module>
 		<module>shared-lib</module>
 	</modules>
-	
-	 <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.5</version>
-        <relativePath/> <!-- lookup iš Maven Central -->
-    </parent>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.2.5</version>
+		<relativePath /> <!-- lookup iš Maven Central -->
+	</parent>
 
 	<dependencyManagement>
 		<dependencies>
